@@ -1,0 +1,68 @@
+<div class="form-container">
+  <!-- Left side image -->
+  <div class="form-img">
+    <img src="assets/svgs/guard-img.svg" alt="Security Guard" />
+  </div>
+
+  <!-- Right side form -->
+  <div class="form-content">
+    <h2>Contact Us</h2>
+    <form class="form">
+      <!-- User Name -->
+      <label for="userName">Full Name</label>
+      <input
+        type="text"
+        id="userName"
+        name="userName"
+        class="input"
+        placeholder="Enter your full name"
+        required
+      />
+
+      <!-- Email -->
+      <label for="email">Email ID</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="input"
+        placeholder="Enter your email"
+        required
+      />
+
+      <!-- Phone -->
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="input"
+        placeholder="Enter your phone number"
+        required
+      />
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        class="textarea"
+        placeholder="Write your message here..."
+        rows="4"
+      ></textarea>
+
+      <!-- Authorization Checkbox -->
+      <div class="consent">
+        <input type="checkbox" id="consent" name="consent" required />
+        <label for="consent">
+          I hereby authorize to send notifications on SMS / Messages /
+          Promotional / Informational messages
+          <span class="required-icon">*</span>
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</div>

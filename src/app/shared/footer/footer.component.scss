@@ -1,0 +1,74 @@
+.footer-top-container {
+  display: grid;
+}
+
+.container {
+  width: 100vh;
+  max-width: 1200px; /* keeps content centered and not too wide */
+  padding-top: 4.75rem;
+  padding-bottom: 2.4rem;
+  padding-right: var(--bs-gutter-x, 0.75rem); /* fallback single value */
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.links {
+  display: grid;
+}
+
+.link-items {
+  display: grid;
+  gap: 0.5rem; /* spacing only between links */
+}
+
+.links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.links a:hover {
+  color: #1e3c72;
+  transform: translateX(3px);
+}
+
+.footer-bottom-container .container {
+  padding-top: 0; /* remove top padding */
+  padding-bottom: 0; /* remove bottom padding */
+}
+.footer-bottom-container {
+  padding: 0.5rem 1rem; /* thinner height */
+  background: #1e3c72;
+  color: #fff;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.icons {
+  display: flex;
+  place-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.icons a {
+  color: #ffd700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.icons a:hover {
+  color: #fff;
+}
