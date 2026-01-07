@@ -1,0 +1,58 @@
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch; /* 🔹 instead of center */
+  padding: 2rem;
+}
+
+.form-img {
+  display: flex; /* flexbox works well here */
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* 🔹 fill the grid row */
+}
+
+.form-img img {
+  width: 100%;
+  max-width: 25rem; /* keep it capped */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Right side form content */
+.form-content {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Form styling */
+.form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* single column inside form */
+  width: 100%;
+}
+
+.input,
+.textarea {
+  width: auto;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+}
+
+.btn {
+  padding: 0.75rem;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.required-icon {
+  color: red;
+}
