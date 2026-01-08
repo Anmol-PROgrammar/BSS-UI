@@ -7,62 +7,146 @@
   <!-- Right side form -->
   <div class="form-content">
     <h2>Contact Us</h2>
-    <form class="form">
-      <!-- User Name -->
-      <label for="userName">Full Name</label>
+    <form class="form" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <!-- Full Name -->
+      <label for="userName"
+        >Full Name <span class="required-icon">*</span></label
+      >
       <input
         type="text"
         id="userName"
-        name="userName"
         class="input"
         placeholder="Enter your full name"
-        required
+        formControlName="FullName"
       />
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.get('FullName')?.touched &&
+          registrationForm.get('FullName')?.invalid
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('FullName')?.errors?.['required']"
+          >Full Name is required.</span
+        >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('FullName')?.errors?.['minlength']"
+          >Minimum 3 characters required.</span
+        >
+      </div>
 
       <!-- Email -->
-      <label for="email">Email ID</label>
+      <label for="email">Email ID <span class="required-icon">*</span></label>
       <input
         type="email"
         id="email"
-        name="email"
         class="input"
         placeholder="Enter your email"
-        required
+        formControlName="EmailId"
       />
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.get('EmailId')?.touched &&
+          registrationForm.get('EmailId')?.invalid
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('EmailId')?.errors?.['required']"
+          >Email is required.</span
+        >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('EmailId')?.errors?.['email']"
+          >Enter a valid email address.</span
+        >
+      </div>
 
       <!-- Phone -->
-      <label for="phone">Phone Number</label>
+      <label for="phone"
+        >Phone Number <span class="required-icon">*</span></label
+      >
       <input
         type="tel"
         id="phone"
-        name="phone"
         class="input"
         placeholder="Enter your phone number"
-        required
+        formControlName="PhoneNumber"
       />
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.get('PhoneNumber')?.touched &&
+          registrationForm.get('PhoneNumber')?.invalid
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('PhoneNumber')?.errors?.['required']"
+          >Phone number is required.</span
+        >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('PhoneNumber')?.errors?.['pattern']"
+          >Must be a 10‑digit valid phone-number.</span
+        >
+      </div>
 
       <!-- Message -->
-      <label for="message">Message</label>
+      <label for="message">Message <span class="required-icon">*</span></label>
       <textarea
         id="message"
-        name="message"
         class="textarea"
         placeholder="Write your message here..."
         rows="4"
+        formControlName="Message"
       ></textarea>
+      <div
+        class="error"
+        *ngIf="
+          registrationForm.get('Message')?.touched &&
+          registrationForm.get('Message')?.invalid
+        "
+      >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('Message')?.errors?.['required']"
+          >Message is required.</span
+        >
+        <span
+          class="error-message"
+          *ngIf="registrationForm.get('Message')?.errors?.['minlength']"
+          >Minimum 10 characters required.</span
+        >
+      </div>
 
-      <!-- Authorization Checkbox -->
+      <!-- Consent -->
       <div class="consent">
-        <input type="checkbox" id="consent" name="consent" required />
+        <input type="checkbox" id="consent" formControlName="Consent" />
         <label for="consent">
           I hereby authorize to send notifications on SMS / Messages /
           Promotional / Informational messages
-          <span class="required-icon">*</span>
-        </label>
+          <span class="required-icon">*</span></label
+        >
+      </div>
+      <div class="error" *ngIf="registrationForm.get('Consent')?.invalid">
+        <span class="error-message">You must check this box to proceed.</span>
+        <!-- > -->
       </div>
 
       <!-- Submit -->
-      <button type="submit" class="btn">Submit</button>
+      <button
+        type="submit"
+        class="btn"
+        [disabled]="!registrationForm.valid"
+        [ngClass]="registrationForm.valid ? 'active-btn' : 'inactive-btn'"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </div>
