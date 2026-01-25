@@ -4,7 +4,6 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
-  MinLengthValidator,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 

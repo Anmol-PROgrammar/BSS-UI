@@ -48,3 +48,99 @@
   // max-width: 300px;
   height: auto;
 }
+
+.trust-section {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+  grid-template-columns: 1fr 1fr; /* mobile default */
+}
+
+@media (min-width: 768px) {
+  .trust-section {
+    grid-template-columns: repeat(3, 1fr); /* desktop: 3 columns */
+  }
+}
+
+.card {
+  min-height: 16rem;
+  min-width: 16rem;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.trust-card {
+  min-height: 16rem;
+  min-width: 16rem;
+  border: 1px solid #ddd;
+  border-radius: 24px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+  display: grid;
+  grid-template-rows: 2fr auto auto auto;
+  justify-items: center;
+  align-items: center;
+}
+.trust-card__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #2a5298; /* deep blue tone for consistency */
+  margin: 0.75rem 0 0.5rem; /* spacing above/below */
+  text-align: center;
+  letter-spacing: 0.5px; /* subtle spacing for elegance */
+}
+
+.trust-card__text {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #1e3c72;
+  margin: 0.5rem 1rem 0.5rem; /* balanced spacing */
+  text-align: center;
+}
+
+.trust-card__divider {
+  width: 90%;
+  border: thin;
+  border-top: 1px solid #ccc;
+  margin: 0.5rem 0;
+}
+
+.center-card {
+  background: linear-gradient(135deg, #0b1f3a 0%, #1e3c72 50%, #2a5298 100%);
+  color: #fff; /* makes all text white */
+}
+
+.center-card .trust-card__title,
+.center-card .trust-card__text {
+  color: whitesmoke;
+}
+
+.center-card .trust-card__divider {
+  border-top: 0.5px solid rgba(255, 255, 255, 0.6);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #1e3c72;
+  // color: #2a5298;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, #ffd700, #f4c430);
+  border-radius: 50px;
+}
