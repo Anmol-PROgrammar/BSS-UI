@@ -3,7 +3,7 @@
 }
 
 .container {
-  width: 100vh;
+  width: auto;
   max-width: 1200px; /* keeps content centered and not too wide */
   padding-top: 4.75rem;
   padding-bottom: 2.4rem;
@@ -19,6 +19,10 @@
   gap: 1rem;
 }
 
+.about p {
+  margin-right: 1rem;
+}
+
 .links {
   display: grid;
 }
@@ -32,7 +36,9 @@
   text-decoration: none;
   color: #000;
   font-size: 0.95rem;
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
 }
 
 .links a:hover {
@@ -46,7 +52,8 @@
 }
 .footer-bottom-container {
   padding: 0.5rem 1rem; /* thinner height */
-  background: #1e3c72;
+  // background: #1e3c72;
+  background: linear-gradient(135deg, #0b1f3a 0%, #1e3c72 50%, #2a5298 100%);
   color: #fff;
 }
 
