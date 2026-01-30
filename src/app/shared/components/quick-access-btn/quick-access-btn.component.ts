@@ -5,13 +5,13 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
-  selector: 'app-scroll-to-top',
+  selector: 'app-quick-access-btn',
   standalone: true,
   imports: [CommonModule, AppRoutingModule],
-  templateUrl: './scroll-to-top.component.html',
-  styleUrls: ['./scroll-to-top.component.scss'],
+  templateUrl: './quick-access-btn.component.html',
+  styleUrls: ['./quick-access-btn.component.scss'],
 })
-export class ScrollToTopComponent {
+export class QuickAccessBtnComponent {
   windowScrolled: boolean = false;
   isFormPage: boolean = false;
 

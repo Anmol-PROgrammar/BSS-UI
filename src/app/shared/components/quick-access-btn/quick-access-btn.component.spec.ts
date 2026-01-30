@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ScrollToTopComponent } from './scroll-to-top.component';
+import { QuickAccessBtnComponent } from './quick-access-btn.component';
 
-describe('ScrollToTopComponent', () => {
-  let component: ScrollToTopComponent;
-  let fixture: ComponentFixture<ScrollToTopComponent>;
+describe('QuickAccessBtnComponent', () => {
+  let component: QuickAccessBtnComponent;
+  let fixture: ComponentFixture<QuickAccessBtnComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ScrollToTopComponent]
+      imports: [QuickAccessBtnComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ScrollToTopComponent);
+    fixture = TestBed.createComponent(QuickAccessBtnComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

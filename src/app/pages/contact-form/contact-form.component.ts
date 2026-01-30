@@ -9,30 +9,32 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact-form',
+  standalone: true,
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss',
+  styleUrls: ['./contact-form.component.scss'],
 })
 export class ContactFormComponent {
   registrationForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.registrationForm = this.fb.group({
-      FullName: ['', [Validators.required, Validators.minLength(3)]], // must not be empty
-      EmailId: ['', [Validators.required, Validators.email]], // required + valid email format
+      FullName: ['', [Validators.required, Validators.minLength(3)]],
+      EmailId: ['', [Validators.required, Validators.email]],
       PhoneNumber: [
         '',
         [Validators.required, Validators.pattern(/^[0-9]{10}$/)],
-      ], // 10‑digit phone
-      Message: ['', [Validators.required, Validators.minLength(10)]], // at least 10 chars
-      Consent: [false, Validators.requiredTrue], // must be checked
+      ],
+      Message: ['', [Validators.required, Validators.minLength(10)]],
+      Consent: [false, Validators.requiredTrue],
     });
   }
 
   onSubmit(): void {
     if (this.registrationForm.valid) {
-      console.log('Form Data:', this.registrationForm.value); // Form values on submission
+      console.log('Form Data:', this.registrationForm.value);
     } else {
+      this.registrationForm.markAllAsTouched();
       console.log('Form is invalid.');
     }
   }
