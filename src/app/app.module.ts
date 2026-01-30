@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ScrollToTopComponent } from './shared/components/scroll-to-top/scroll-to-top.component';
+import { QuickAccessBtnComponent } from './shared/components/quick-access-btn/quick-access-btn.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +14,7 @@ import { ScrollToTopComponent } from './shared/components/scroll-to-top/scroll-t
     AppRoutingModule,
     HeaderComponent,
     FooterComponent,
-    ScrollToTopComponent,
+    QuickAccessBtnComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

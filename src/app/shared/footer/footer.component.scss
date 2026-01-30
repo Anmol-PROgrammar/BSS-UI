@@ -1,16 +1,6 @@
 .footer-top-container {
   display: grid;
-}
-
-.container {
-  width: auto;
-  max-width: 1200px; /* keeps content centered and not too wide */
-  padding-top: 4.75rem;
-  padding-bottom: 2.4rem;
-  padding-right: var(--bs-gutter-x, 0.75rem); /* fallback single value */
-  padding-left: var(--bs-gutter-x, 0.75rem);
-  margin-right: auto;
-  margin-left: auto;
+  padding: 2.5rem 0;
 }
 
 .footer-top {
@@ -62,6 +52,9 @@
   grid-template-columns: 2fr 1fr;
 }
 
+.footer-bottom p {
+  margin: 1rem 0;
+}
 .icons {
   display: flex;
   place-items: center;

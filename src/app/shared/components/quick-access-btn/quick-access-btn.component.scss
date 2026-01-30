@@ -1,7 +1,7 @@
 .whatsapp-wrapper {
   position: fixed;
-  bottom: 60px;
-  left: 30px;
+  bottom: 20px;
+  left: 20px;
   z-index: 1000;
 }
 
@@ -51,7 +51,8 @@
 
 .back-to-top {
   position: fixed;
-  right: 30px;
+  right: 20px;
+  bottom: 6rem;
   width: 64px;
   height: 64px;
   z-index: 1000;
@@ -63,21 +64,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom: 8.25rem;
   transition:
     bottom 200ms,
     transform 200ms;
 }
 
 .back-to-top:hover {
-  bottom: 8.75rem;
+  bottom: 6.75rem;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .contact-btn {
   position: fixed;
-  right: 30px;
-  bottom: 60px;
+  right: 20px;
+  bottom: 20px;
 
   height: 4rem;
   width: 10rem;
@@ -121,7 +121,7 @@
 
 /* SCROLLED STATE */
 .contact-btn.scrolled {
-  right: 30px;
+  right: 20px;
   width: 64px;
   height: 64px;
   z-index: 1000;
@@ -142,6 +142,6 @@
 /* Slightly grow icon */
 .contact-btn.scrolled .contact-icon {
   font-size: 22px;
-  right: 30px;
+  right: 20px;
   transform: scale(1.1);
 }
