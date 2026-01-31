@@ -1,0 +1,217 @@
+<!-- contact-form.component.html -->
+<div class="contact-form-container">
+  <!-- Left side: SVG Image -->
+  <div class="contact-image">
+    <img
+      src="assets/svgs/guard-img.svg"
+      alt="Security Guard"
+      class="svg-image"
+    />
+  </div>
+
+  <!-- Right side: Form Content -->
+  <div class="contact-form-content">
+    <div class="form-header">
+      <h2>Contact Us</h2>
+      <p class="form-subtitle">
+        Get in touch with our team for inquiries and support
+      </p>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div *ngIf="submitSuccess" class="alert alert-success">
+      <svg class="alert-icon" viewBox="0 0 24 24">
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+      </svg>
+      <span>Thank you! Your message has been sent successfully.</span>
+    </div>
+
+    <div *ngIf="submitError" class="alert alert-error">
+      <svg class="alert-icon" viewBox="0 0 24 24">
+        <path
+          d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+        />
+      </svg>
+      <span>{{ submitError }}</span>
+    </div>
+
+    <!-- Form -->
+    <form
+      [formGroup]="registrationForm"
+      (ngSubmit)="onSubmit()"
+      class="contact-form"
+    >
+      <!-- Full Name -->
+      <div class="form-group">
+        <label for="FullName">
+          Full Name <span class="required">*</span>
+        </label>
+        <input
+          type="text"
+          id="FullName"
+          formControlName="FullName"
+          [class.input-error]="
+            registrationForm.get('FullName')?.invalid &&
+            registrationForm.get('FullName')?.touched
+          "
+          placeholder="Enter your full name"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            registrationForm.get('FullName')?.invalid &&
+            registrationForm.get('FullName')?.touched
+          "
+          class="error-message"
+        >
+          <span *ngIf="registrationForm.get('FullName')?.errors?.['required']"
+            >Full Name is required</span
+          >
+          <span *ngIf="registrationForm.get('FullName')?.errors?.['minlength']"
+            >Minimum 3 characters required</span
+          >
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="EmailId"> Email ID <span class="required">*</span> </label>
+        <input
+          type="email"
+          id="EmailId"
+          formControlName="EmailId"
+          [class.input-error]="
+            registrationForm.get('EmailId')?.invalid &&
+            registrationForm.get('EmailId')?.touched
+          "
+          placeholder="Enter your email"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            registrationForm.get('EmailId')?.invalid &&
+            registrationForm.get('EmailId')?.touched
+          "
+          class="error-message"
+        >
+          <span *ngIf="registrationForm.get('EmailId')?.errors?.['required']"
+            >Email is required</span
+          >
+          <span *ngIf="registrationForm.get('EmailId')?.errors?.['email']"
+            >Enter a valid email address</span
+          >
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="form-group">
+        <label for="PhoneNumber">
+          Phone Number <span class="required">*</span>
+        </label>
+        <input
+          type="tel"
+          id="PhoneNumber"
+          formControlName="PhoneNumber"
+          [class.input-error]="
+            registrationForm.get('PhoneNumber')?.invalid &&
+            registrationForm.get('PhoneNumber')?.touched
+          "
+          placeholder="Enter your phone number"
+          class="form-input"
+        />
+        <div
+          *ngIf="
+            registrationForm.get('PhoneNumber')?.invalid &&
+            registrationForm.get('PhoneNumber')?.touched
+          "
+          class="error-message"
+        >
+          <span
+            *ngIf="registrationForm.get('PhoneNumber')?.errors?.['required']"
+            >Phone number is required</span
+          >
+          <span *ngIf="registrationForm.get('PhoneNumber')?.errors?.['pattern']"
+            >Must be a valid 10-digit number</span
+          >
+        </div>
+      </div>
+
+      <!-- Message -->
+      <div class="form-group">
+        <label for="Message"> Message <span class="required">*</span> </label>
+        <textarea
+          id="Message"
+          formControlName="Message"
+          [class.input-error]="
+            registrationForm.get('Message')?.invalid &&
+            registrationForm.get('Message')?.touched
+          "
+          placeholder="Write your message here..."
+          rows="4"
+          class="form-textarea"
+        ></textarea>
+        <div
+          *ngIf="
+            registrationForm.get('Message')?.invalid &&
+            registrationForm.get('Message')?.touched
+          "
+          class="error-message"
+        >
+          <span *ngIf="registrationForm.get('Message')?.errors?.['required']"
+            >Message is required</span
+          >
+          <span *ngIf="registrationForm.get('Message')?.errors?.['minlength']"
+            >Minimum 10 characters required</span
+          >
+        </div>
+      </div>
+
+      <!-- Consent -->
+      <div class="form-group consent-group">
+        <label class="consent-label">
+          <input
+            type="checkbox"
+            formControlName="Consent"
+            class="consent-checkbox"
+          />
+          <span class="consent-text">
+            I hereby authorize to send notifications on SMS / Messages /
+            Promotional / Informational messages
+            <span class="required">*</span>
+          </span>
+        </label>
+        <div
+          *ngIf="
+            registrationForm.get('Consent')?.invalid &&
+            registrationForm.get('Consent')?.touched
+          "
+          class="error-message"
+        >
+          You must agree to continue
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="submit-button"
+        [disabled]="isLoading || registrationForm.invalid"
+        [class.loading]="isLoading"
+      >
+        <span *ngIf="!isLoading">Submit Message</span>
+        <span *ngIf="isLoading" class="loading-indicator">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle
+              cx="25"
+              cy="25"
+              r="20"
+              fill="none"
+              stroke-width="4"
+            ></circle>
+          </svg>
+          Sending...
+        </span>
+      </button>
+    </form>
+  </div>
+</div>

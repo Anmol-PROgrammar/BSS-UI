@@ -1,0 +1,203 @@
+.whatsapp-wrapper {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1;
+}
+
+/* Common styles */
+.whatsapp-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    box-shadow 0.35s ease;
+  text-decoration: none;
+  line-height: 0;
+  font-size: 0;
+}
+
+/* Hover effect */
+.whatsapp-icon:hover {
+  transform: translateY(-6px) scale(1.05);
+}
+
+/* Large button */
+.whatsapp-large-icon img {
+  height: auto;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+/* Small circular button */
+.whatsapp-small-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-small-icon i {
+  font-size: 36px;
+  color: #ffff;
+}
+
+// Right Hover icons
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 6rem;
+  width: 64px;
+  height: 64px;
+  z-index: 1;
+  font-size: 20px;
+  background: linear-gradient(135deg, #0b1f3a 0%, #1e3c72 50%, #2a5298 100%);
+  cursor: pointer;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    bottom 200ms,
+    transform 200ms;
+}
+
+.back-to-top:hover {
+  bottom: 6.75rem;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.contact-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+
+  height: 4rem;
+  width: 10rem;
+
+  background: linear-gradient(135deg, #0b1f3a 0%, #1e3c72 50%, #2a5298 100%);
+  color: whitesmoke;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  border-radius: 12px;
+  cursor: pointer;
+
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
+  transition:
+    width 0.45s ease,
+    border-radius 0.45s ease,
+    transform 0.25s ease;
+}
+
+/* Hover */
+.contact-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Icon */
+.contact-icon {
+  font-size: 22px !important;
+  transition: font-size 0.45s ease;
+}
+
+/* Text */
+.contact-text {
+  white-space: nowrap;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* SCROLLED STATE */
+.contact-btn.scrolled {
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  z-index: 1;
+  font-size: 20px;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+/* Hide text smoothly */
+.contact-btn.scrolled .contact-text {
+  opacity: 0;
+  display: none;
+  transform: scale(0.6);
+  pointer-events: none;
+  transition-delay: 0.1s;
+}
+
+/* Slightly grow icon */
+.contact-btn.scrolled .contact-icon {
+  font-size: 22px;
+  right: 20px;
+  transform: scale(1.1);
+}
+
+@media (max-width: 400px) {
+  /* ---------- WhatsApp ---------- */
+
+  .whatsapp-wrapper {
+    bottom: 14px;
+    left: 14px;
+  }
+
+  .whatsapp-small-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-small-icon i {
+    font-size: 28px;
+  }
+
+  .whatsapp-large-icon img {
+    max-width: 160px; /* scales SVG button */
+  }
+
+  /* ---------- Back to Top ---------- */
+
+  .back-to-top {
+    width: 52px;
+    height: 52px;
+    bottom: 5rem;
+    font-size: 16px;
+  }
+
+  .back-to-top:hover {
+    bottom: 5.5rem; /* keep hover animation proportional */
+  }
+
+  /* ---------- Contact Button ---------- */
+
+  .contact-btn {
+    width: 8.5rem;
+    height: 3.2rem;
+    bottom: 14px;
+    right: 14px;
+    border-radius: 10px;
+  }
+
+  .contact-btn.scrolled {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+  }
+
+  .contact-btn i {
+    font-size: 18px;
+  }
+}

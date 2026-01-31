@@ -1,0 +1,60 @@
+<section class="container">
+  <!-- Our services -->
+  <section class="our-services mb-5">
+    <h1 class="section-title">Our Services</h1>
+    <p class="section-subtitle">
+      “Professional, disciplined, and highly reliable security team.”
+    </p>
+    <hr />
+
+    <div class="service-content">
+      <div class="service-card">
+        <img src="https://picsum.photos/800/600?1" />
+        <div class="service-overlay">
+          <h3>Security Guard</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+            earum.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://picsum.photos/800/600?2" />
+        <div class="service-overlay">
+          <h3>Bouncers</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+            earum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h1 class="section-title">Testimonials</h1>
+  <p class="section-subtitle">
+    Trusted by clients for reliability, professionalism, and peace of mind.
+  </p>
+  <hr />
+
+  <div class="testimonials">
+    <figure class="testimonial-card" *ngFor="let item of testimonials">
+      <blockquote class="testimonial-quote">
+        {{ item.text }}
+        <span class="quote-arrow"></span>
+      </blockquote>
+
+      <div class="testimonial-footer">
+        <img class="testimonial-avatar" [src]="item.image" [alt]="item.name" />
+
+        <figcaption class="testimonial-author">
+          <h5>
+            {{ item.name }} <br />
+            <span>{{ item.company }}</span>
+          </h5>
+        </figcaption>
+      </div>
+    </figure>
+  </div>
+</section>

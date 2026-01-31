@@ -1,0 +1,95 @@
+<div class="container">
+  <div class="intro">
+    <div class="intro-text">
+      <h3>Trusted Security Services</h3>
+      <p>
+        We provide trusted security guard services ensuring safety and peace of
+        mind.
+      </p>
+    </div>
+    <div class="intro-image">
+      <img src="assets/svgs/guard-img.svg" alt="Security Guard" />
+    </div>
+  </div>
+
+  <!-- Trust Section -->
+  <div class="trust-section">
+    <div class="trust-card">
+      <div class="trust-card__icon">
+        <i class="fa-solid fa-shield-halved fa-2xl"></i>
+      </div>
+      <h3 class="trust-card__title">Reliable & Trustworthy</h3>
+      <hr class="trust-card__divider" />
+      <p class="trust-card__text">Trained and vetted security personnel.</p>
+    </div>
+    <div class="trust-card center-card">
+      <div class="trust-card__icon">
+        <i class="fa-solid fa-shield-halved fa-2xl"></i>
+      </div>
+      <h3 class="trust-card__title">Professional Conduct</h3>
+      <hr class="trust-card__divider" />
+      <p class="trust-card__text">Uniformed and disciplined guards.</p>
+    </div>
+    <div class="trust-card">
+      <div class="trust-card__icon">
+        <i class="fa-solid fa-shield-halved fa-2xl"></i>
+      </div>
+      <h3 class="trust-card__title">Focused on Safety</h3>
+      <hr class="trust-card__divider" />
+      <p class="trust-card__text">Protecting your property and people.</p>
+    </div>
+  </div>
+
+  <!-- Our services -->
+  <section class="our-services">
+    <h1 class="section-title">Our Services</h1>
+    <p class="quote">
+      “Professional, disciplined, and highly reliable security team.”
+    </p>
+    <hr />
+
+    <div class="service-content">
+      <div class="service-card">
+        <img src="https://picsum.photos/800/600?1" />
+        <div class="service-overlay">
+          <h3>Security Guard</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+            earum.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://picsum.photos/800/600?2" />
+        <div class="service-overlay">
+          <h3>Bouncers</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+            earum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-us">
+    <h1 class="section-title">Why Choose Us?</h1>
+    <p class="why-subtitle quote">
+      "Trusted protection backed by discipline, training, and rapid response."
+    </p>
+    <hr />
+
+    <div class="why-grid">
+      <div class="why-item" *ngFor="let item of list; index as i">
+        <div class="why-badge">
+          <span class="why-index">{{ i + 1 | number: "2.0" }}</span>
+        </div>
+        <p>{{ item.text }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Container end -->
+</div>

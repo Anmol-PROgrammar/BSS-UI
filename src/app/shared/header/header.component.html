@@ -1,0 +1,27 @@
+<div class="navbar">
+  <div class="container navbar-inner">
+    <!-- Logo -->
+    <div class="logo" (click)="navigateToHome()">
+      <img src="apple-touch-icon.png" alt="Black Shadow Security Logo" />
+      <div class="logo-text">
+        BLACK SHADOW SECURITY<br />
+        &amp; MANPOWER SERVICES
+      </div>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="handle" (click)="toggleNavLinks()">
+      <i class="fa-solid" [ngClass]="isMenuOpen ? 'fa-xmark' : 'fa-bars'"></i>
+    </div>
+
+    <!-- Nav links -->
+    <nav class="nav-links" [class.openMenu]="isMenuOpen">
+      <a routerLink="" (click)="closeMenu()">Home</a>
+      <a routerLink="about" (click)="closeMenu()">About</a>
+      <a routerLink="services" (click)="closeMenu()">Services</a>
+      <a routerLink="form" (click)="closeMenu()">Contact Us</a>
+    </nav>
+  </div>
+  <!-- Backdrop (click outside to close – mobile only via CSS) -->
+  <div class="nav-backdrop" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+</div>

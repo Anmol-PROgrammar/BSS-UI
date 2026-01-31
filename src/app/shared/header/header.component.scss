@@ -1,0 +1,138 @@
+/* Navbar */
+.navbar {
+  background: linear-gradient(135deg, #0b1f3a 0%, #1e3c72 50%, #2a5298 100%);
+  color: #fff;
+}
+
+/* Inner container */
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  min-height: 8vh;
+  padding: 0.75rem 1rem;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  flex: 0 0 auto; /* 🔑 prevents layout breaking */
+  max-width: 80%;
+}
+
+.logo img {
+  width: 64px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Desktop nav */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+  z-index: 2;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #ffd700;
+}
+
+/* Hamburger */
+.handle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto; /* 🔑 always push right */
+}
+
+/* ================= BACKDROP ================= */
+
+.nav-backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0; /* top, right, bottom, left = 0 */
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 998;
+  }
+
+  .nav-links {
+    z-index: 999; /* sidebar above backdrop */
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .handle {
+    display: block;
+  }
+
+  /* Hide desktop links */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -260px; /* hidden */
+    height: 100vh;
+    width: 260px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 5rem 1.5rem;
+    gap: 1.25rem;
+
+    background: linear-gradient(135deg, #0b1f3a 0%, #1e3c72 50%, #2a5298 100%);
+
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.4);
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-links.openMenu {
+    left: 0; /* slide in from LEFT */
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+}

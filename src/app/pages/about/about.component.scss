@@ -1,0 +1,507 @@
+/* ============================
+   ABOUT – SECURITY STYLE
+============================ */
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-security {
+  padding: 2rem 0;
+  color: #0f172a;
+}
+
+/* ----------------------------
+   ABOUT INTRO
+---------------------------- */
+.about-intro {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .about-intro {
+    text-align: left;
+  }
+}
+
+.about-intro h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  border-left: none;
+  padding-left: 0;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .about-intro h1 {
+    font-size: 2.4rem;
+    border-left: 4px solid #facc15;
+    padding-left: 1rem;
+  }
+}
+
+.about-intro h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd700, #f4c430);
+  border-radius: 50px;
+}
+
+@media (min-width: 768px) {
+  .about-intro h1::after {
+    display: none;
+  }
+}
+
+.about-intro p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+@media (min-width: 768px) {
+  .about-intro p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+/* ----------------------------
+   VALUES SECTION
+---------------------------- */
+.values-title {
+  text-align: center;
+  font-size: 1.75rem;
+  margin: 0 0 2rem;
+  color: #0f172a;
+}
+
+@media (min-width: 768px) {
+  .values-title {
+    font-size: 2rem;
+    margin: 3rem 0 2.5rem;
+  }
+}
+
+/* ----------------------------
+   VALUES GRID
+---------------------------- */
+.about-values {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .about-values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-values {
+    gap: 2rem;
+  }
+}
+
+/* ----------------------------
+   VALUE BOX
+---------------------------- */
+.value-box {
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-left: 4px solid #facc15;
+  border-radius: 8px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.value-box h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0f172a;
+}
+
+.value-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+}
+
+/* ============================
+   FOUNDER SECTION
+============================ */
+
+.founder-section {
+  padding: 3rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+.section-subtitle {
+  color: #7f8c8d;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .section-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+hr {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  border: none;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+/* Top Quote Section */
+.top-quote {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1.5rem;
+  margin: 0 0 2rem;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+}
+
+@media (min-width: 768px) {
+  .top-quote {
+    padding: 2rem;
+    margin: 0 auto 3rem;
+    max-width: 800px;
+  }
+}
+
+.inspirational-quote {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #2c3e50;
+  text-align: center;
+  margin: 0 0 0.5rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .inspirational-quote {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin: 0 auto 1rem;
+  }
+}
+
+.quote-author {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .quote-author {
+    font-size: 1rem;
+  }
+}
+
+/* Simple Founder Layout */
+.simple-founder-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .simple-founder-layout {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 992px) {
+  .simple-founder-layout {
+    gap: 4rem;
+  }
+}
+
+/* Founder Photo */
+.founder-photo {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (min-width: 768px) {
+  .founder-photo {
+    flex: 1;
+    min-width: 300px;
+  }
+}
+
+.photo-frame {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .photo-frame {
+    padding: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.photo-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.founder-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+}
+
+@media (min-width: 768px) {
+  .founder-img {
+    max-height: 500px;
+    aspect-ratio: auto;
+  }
+}
+
+/* Founder Message */
+.founder-message {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .founder-message {
+    flex: 1.5;
+    padding: 0;
+  }
+}
+
+.message-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .message-content {
+    margin: 0;
+  }
+}
+
+.founder-name {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .founder-name {
+    font-size: 2.2rem;
+    text-align: left;
+  }
+}
+
+.founder-title {
+  font-size: 1rem;
+  color: #3498db;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .founder-title {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+}
+
+/* Quote Box */
+.quote-box {
+  background: white;
+  border-left: 4px solid #3498db;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 768px) {
+  .quote-box {
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.quote {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #34495e;
+  margin: 0;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .quote {
+    font-size: 1.2rem;
+    line-height: 1.7;
+  }
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 480px) {
+  .about-security {
+    padding: 1.5rem 0;
+  }
+
+  .about-intro h1 {
+    font-size: 1.75rem;
+  }
+
+  .value-box {
+    padding: 1.25rem;
+  }
+
+  .founder-section {
+    padding: 2rem 0;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .founder-name {
+    font-size: 1.4rem;
+  }
+
+  .founder-title {
+    font-size: 0.9rem;
+  }
+
+  .quote {
+    font-size: 0.95rem;
+  }
+
+  .photo-frame {
+    padding: 8px;
+  }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+  .about-security {
+    padding: 4rem 0;
+  }
+
+  .founder-section {
+    padding: 4rem 0;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.value-box,
+.simple-founder-layout > * {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.top-quote {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .mb-4 {
+    margin-bottom: 2rem;
+  }
+}

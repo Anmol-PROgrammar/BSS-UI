@@ -1,0 +1,42 @@
+<!-- WhatsApp Wrapper -->
+<div class="whatsapp-wrapper" [class.scrolled]="windowScrolled">
+  <!-- Large Icon -->
+  <a
+    *ngIf="!windowScrolled"
+    aria-label="Chat on WhatsApp"
+    href="https://wa.me/91xxxxxxxxxx?text=I%27m%20interested%20in%20your%20service."
+    class="whatsapp-icon whatsapp-large-icon"
+  >
+    <img
+      src="assets/svgs/WhatsAppButtonGreenLarge.svg"
+      alt="Chat on WhatsApp"
+    />
+  </a>
+
+  <!-- Small Icon -->
+  <a
+    *ngIf="windowScrolled"
+    aria-label="Chat on WhatsApp"
+    href="https://wa.me/91xxxxxxxxxx?text=I%27m%20interested%20in%20your%20service."
+    class="whatsapp-icon whatsapp-small-icon"
+  >
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- Scroll to Top -->
+<div class="back-to-top" *ngIf="showScrollToTopButton" (click)="scrollToTop()">
+  <i class="fa-solid fa-arrow-up"></i>
+</div>
+
+<!-- Contact Us Button -->
+<div
+  *ngIf="!isFormPage"
+  class="contact-btn"
+  [class.scrolled]="windowScrolled"
+  (click)="goToForm()"
+>
+  <span class="contact-text">Contact Us</span>
+  <i class="fa-regular fa-comments"></i>
+  <!-- <i class="fa-regular fa-envelope contact-icon"></i> -->
+</div>
