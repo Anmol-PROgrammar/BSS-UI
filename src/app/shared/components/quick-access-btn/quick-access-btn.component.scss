@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 20px;
   left: 20px;
-  z-index: 1000;
+  z-index: 1;
 }
 
 /* Common styles */
@@ -55,7 +55,7 @@
   bottom: 6rem;
   width: 64px;
   height: 64px;
-  z-index: 1000;
+  z-index: 1;
   font-size: 20px;
   background: linear-gradient(135deg, #0b1f3a 0%, #1e3c72 50%, #2a5298 100%);
   cursor: pointer;
@@ -78,6 +78,7 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: 1;
 
   height: 4rem;
   width: 10rem;
@@ -124,7 +125,7 @@
   right: 20px;
   width: 64px;
   height: 64px;
-  z-index: 1000;
+  z-index: 1;
   font-size: 20px;
   border-radius: 50%;
   justify-content: center;
@@ -144,4 +145,59 @@
   font-size: 22px;
   right: 20px;
   transform: scale(1.1);
+}
+
+@media (max-width: 400px) {
+  /* ---------- WhatsApp ---------- */
+
+  .whatsapp-wrapper {
+    bottom: 14px;
+    left: 14px;
+  }
+
+  .whatsapp-small-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-small-icon i {
+    font-size: 28px;
+  }
+
+  .whatsapp-large-icon img {
+    max-width: 160px; /* scales SVG button */
+  }
+
+  /* ---------- Back to Top ---------- */
+
+  .back-to-top {
+    width: 52px;
+    height: 52px;
+    bottom: 5rem;
+    font-size: 16px;
+  }
+
+  .back-to-top:hover {
+    bottom: 5.5rem; /* keep hover animation proportional */
+  }
+
+  /* ---------- Contact Button ---------- */
+
+  .contact-btn {
+    width: 8.5rem;
+    height: 3.2rem;
+    bottom: 14px;
+    right: 14px;
+    border-radius: 10px;
+  }
+
+  .contact-btn.scrolled {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+  }
+
+  .contact-btn i {
+    font-size: 18px;
+  }
 }

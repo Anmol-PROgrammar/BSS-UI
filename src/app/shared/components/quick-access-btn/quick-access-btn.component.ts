@@ -13,6 +13,7 @@ import { filter } from 'rxjs';
 })
 export class QuickAccessBtnComponent {
   windowScrolled: boolean = false;
+  showScrollToTopButton: boolean = false;
   isFormPage: boolean = false;
 
   constructor(private router: Router) {
@@ -25,7 +26,8 @@ export class QuickAccessBtnComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
-    this.windowScrolled = window.scrollY > 600;
+    this.windowScrolled = window.scrollY > 100;
+    this.showScrollToTopButton = window.scrollY > 600;
   }
 
   scrollToTop(): void {

@@ -16,31 +16,12 @@
 
     <!-- Nav links -->
     <nav class="nav-links" [class.openMenu]="isMenuOpen">
-      <a
-        routerLink=""
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        (click)="isMenuOpen = false"
-        >Home</a
-      >
-      <a
-        routerLink="about"
-        routerLinkActive="active"
-        (click)="isMenuOpen = false"
-        >About</a
-      >
-      <a
-        routerLink="services"
-        routerLinkActive="active"
-        (click)="isMenuOpen = false"
-        >Services</a
-      >
-      <a
-        routerLink="form"
-        routerLinkActive="active"
-        (click)="isMenuOpen = false"
-        >Contact Us</a
-      >
+      <a routerLink="" (click)="closeMenu()">Home</a>
+      <a routerLink="about" (click)="closeMenu()">About</a>
+      <a routerLink="services" (click)="closeMenu()">Services</a>
+      <a routerLink="form" (click)="closeMenu()">Contact Us</a>
     </nav>
   </div>
+  <!-- Backdrop (click outside to close – mobile only via CSS) -->
+  <div class="nav-backdrop" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
 </div>

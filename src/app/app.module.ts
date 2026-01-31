@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { QuickAccessBtnComponent } from './shared/components/quick-access-btn/quick-access-btn.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,7 @@ import { QuickAccessBtnComponent } from './shared/components/quick-access-btn/qu
     FooterComponent,
     QuickAccessBtnComponent,
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

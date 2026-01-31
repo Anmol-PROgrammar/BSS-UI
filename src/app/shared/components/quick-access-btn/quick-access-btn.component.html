@@ -25,7 +25,7 @@
 </div>
 
 <!-- Scroll to Top -->
-<div class="back-to-top" *ngIf="windowScrolled" (click)="scrollToTop()">
+<div class="back-to-top" *ngIf="showScrollToTopButton" (click)="scrollToTop()">
   <i class="fa-solid fa-arrow-up"></i>
 </div>
 
@@ -37,5 +37,6 @@
   (click)="goToForm()"
 >
   <span class="contact-text">Contact Us</span>
-  <i class="fa-regular fa-envelope contact-icon"></i>
+  <i class="fa-regular fa-comments"></i>
+  <!-- <i class="fa-regular fa-envelope contact-icon"></i> -->
 </div>
