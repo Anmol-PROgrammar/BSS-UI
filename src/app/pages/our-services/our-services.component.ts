@@ -9,13 +9,13 @@ interface Testimonial {
 }
 
 @Component({
-  selector: 'app-services',
+  selector: 'app-our-services',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss'],
+  templateUrl: './our-services.component.html',
+  styleUrls: ['./our-services.component.scss'],
 })
-export class ServicesComponent {
+export class OurServicesComponent {
   testimonials: Testimonial[] = [
     {
       text: "Calvin: You know sometimes when I'm talking, my words can't keep up with my thoughts... I wonder why we think faster than we speak.",
