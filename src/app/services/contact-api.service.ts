@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface ContactFormData {
   FullName: string;
@@ -15,7 +16,8 @@ export interface ContactFormData {
 })
 export class ContactApiService {
   // API endpoints from environment
-  private readonly CONTACT_ENDPOINT = 'http://localhost:5000/send-email';
+
+  private readonly CONTACT_ENDPOINT = `${environment.apiUrl}/send-email`;
 
   constructor(private http: HttpClient) {}
 
