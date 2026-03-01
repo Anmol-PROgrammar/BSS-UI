@@ -1,13 +1,13 @@
 <div class="container">
   <div class="intro">
-    <div class="intro-text">
+    <div class="intro-text anim-slide-right">
       <h3>Trusted Security Services</h3>
       <p>
         We provide trusted security guard services ensuring safety and peace of
         mind.
       </p>
     </div>
-    <div class="intro-image">
+    <div class="intro-image anim-slide-left delay-2">
       <!-- <img src="assets/svgs/guard-img.svg" alt="Security Guard" /> -->
       <img src="assets/images/guard.jpeg" alt="Security Guard" />
     </div>
@@ -15,7 +15,7 @@
 
   <!-- Trust Section -->
   <div class="trust-section">
-    <div class="trust-card">
+    <div class="trust-card anim-fade-up">
       <div class="trust-card__icon">
         <i class="fa-solid fa-shield-halved fa-2xl"></i>
       </div>
@@ -23,7 +23,7 @@
       <hr class="trust-card__divider" />
       <p class="trust-card__text">Trained and vetted security personnel.</p>
     </div>
-    <div class="trust-card center-card">
+    <div class="trust-card center-card anim-fade-up delay-2">
       <div class="trust-card__icon">
         <i class="fa-solid fa-shield-halved fa-2xl"></i>
       </div>
@@ -31,7 +31,7 @@
       <hr class="trust-card__divider" />
       <p class="trust-card__text">Uniformed and disciplined guards.</p>
     </div>
-    <div class="trust-card">
+    <div class="trust-card anim-fade-up delay-3">
       <div class="trust-card__icon">
         <i class="fa-solid fa-shield-halved fa-2xl"></i>
       </div>
@@ -42,24 +42,24 @@
   </div>
 
   <!-- Focused On Section -->
-  <section class="focused-on">
+  <section class="focused-on anim-fade-up">
     <p class="focused-on__label">
       Focused on safety <br />& trusted security for
     </p>
     <div class="focused-on__grid">
-      <div class="focused-on__item">
+      <div class="focused-on__item anim-fade-up delay-1">
         <i class="fa-solid fa-hospital-user"></i>
         <span>Hospitals</span>
       </div>
-      <div class="focused-on__item">
+      <div class="focused-on__item anim-fade-up delay-2">
         <i class="fa-solid fa-building-columns"></i>
         <span>Educational & Industrial</span>
       </div>
-      <div class="focused-on__item">
+      <div class="focused-on__item anim-fade-up delay-3">
         <i class="fa-solid fa-city"></i>
         <span>Housing Societies</span>
       </div>
-      <div class="focused-on__item">
+      <div class="focused-on__item anim-fade-up delay-4">
         <i class="fa-solid fa-house-lock"></i>
         <span>Home & Shop</span>
       </div>
@@ -67,48 +67,60 @@
   </section>
 
   <!-- Our services -->
-  <section class="our-services">
+  <section class="our-services anim-fade-in">
     <h1 class="section-title">Our Services</h1>
     <p class="quote">
-      “Professional, disciplined, and highly reliable security team.”
+      "Professional, disciplined, and highly reliable security team."
     </p>
     <hr />
 
     <div class="service-content">
-      <div class="service-card">
+      <!-- Security Guard card -->
+      <div class="service-card anim-fade-up">
         <img src="https://picsum.photos/800/600?1" />
         <div class="service-overlay">
           <h3>Security Guard</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            earum.
+            24/7 protection for residential, commercial, and institutional
+            premises by trained, vetted professionals.
           </p>
+          <div class="service-tags">
+            <span>24/7 Deployed</span>
+            <span>Trained & Vetted</span>
+            <span>On-site Supervisor</span>
+          </div>
         </div>
       </div>
-
-      <div class="service-card">
+      <!-- Bouncers card -->
+      <div class="service-card anim-fade-up delay-2">
         <img src="https://picsum.photos/800/600?2" />
         <div class="service-overlay">
           <h3>Bouncers</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            earum.
+            Crowd control & access management for events, venues, and
+            high-profile gatherings — firm but approachable.
           </p>
+          <div class="service-tags">
+            <span>Crowd Control</span>
+            <span>Event Security</span>
+            <span>Conflict Resolution</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section class="why-us">
-    <h1 class="section-title">Why Choose Us?</h1>
+  <section class="why-us anim-fade-in">
+    <h1 class="section-title">Why Choose Black Shadow?</h1>
     <p class="why-subtitle quote">
-      "Trusted protection backed by discipline, training, and rapid response."
+      "Punctuality, discipline, and zero tolerance for negligence — built into
+      every deployment."
     </p>
     <hr />
 
     <div class="why-grid">
-      <div class="why-item" *ngFor="let item of list; index as i">
+      <div class="why-item anim-fade-up" *ngFor="let item of list; index as i">
         <div class="why-badge">
           <span class="why-index">{{ i + 1 | number: "2.0" }}</span>
         </div>

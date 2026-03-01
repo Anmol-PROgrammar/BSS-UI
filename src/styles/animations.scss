@@ -1,0 +1,100 @@
+// ─── Base: all animatable elements start hidden ───────────────────────────────
+.anim-fade-up,
+.anim-fade-in,
+.anim-slide-right,
+.anim-slide-left,
+.anim-scale-in {
+  opacity: 0;
+  transition-duration: 1.2s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-property: opacity, transform;
+
+  // Once JS adds .is-visible, element animates in
+  &.is-visible {
+    opacity: 1;
+    transform: none !important;
+  }
+}
+
+// ─── Animation types ──────────────────────────────────────────────────────────
+.anim-fade-up {
+  transform: translateY(28px);
+}
+.anim-fade-in {
+  transform: translateY(0);
+}
+.anim-slide-right {
+  transform: translateX(-36px);
+}
+.anim-slide-left {
+  transform: translateX(36px);
+}
+.anim-scale-in {
+  transform: scale(0.93);
+}
+
+// ─── Stagger delays — apply to siblings alongside an anim- class ──────────────
+.delay-1 {
+  transition-delay: 0.15s;
+}
+.delay-2 {
+  transition-delay: 0.3s;
+}
+.delay-3 {
+  transition-delay: 0.45s;
+}
+.delay-4 {
+  transition-delay: 0.6s;
+}
+.delay-5 {
+  transition-delay: 0.75s;
+}
+.delay-slow {
+  transition-delay: 2.5s;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Ambient page polish — small global additions that lift the whole page
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Subtle off-white background so the page isn't stark white
+body {
+  background-color: #f5f6f8;
+}
+
+// Section dividers — reusable rule with gold tint
+.section-rule {
+  border: none;
+  border-top: 1px solid rgba(#1e3c72, 0.08);
+  margin: 0 0 3rem;
+}
+
+// Gold accent underline on any heading that needs it
+.heading-accent {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 3px;
+    background: linear-gradient(90deg, #c9a84c, #ffd700);
+    border-radius: 2px;
+  }
+}
+
+// Lift any card on hover with one class — use where hover isn't already defined
+.hover-lift {
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(#0b1f3a, 0.12);
+  }
+}
