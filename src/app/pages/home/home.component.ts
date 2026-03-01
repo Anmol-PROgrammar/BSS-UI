@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { initScrollAnimations } from '../../../utils/animations';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,18 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  list: any = [
-    { text: 'Highly trained & vetted professionals' },
-    { text: '24/7 availability with rapid response' },
-    { text: 'Focused on hospitals & educational institutions' },
-    { text: 'Commitment to integrity & client peace of mind' },
+  list = [
+    {
+      text: 'Punctual, uniformed guards on every shift — no delays, no excuses.',
+    },
+    { text: 'Rigorous screening and training before deployment.' },
+    { text: 'On-site supervisors ensuring discipline and performance.' },
+    { text: 'Quick replacement policy — zero gaps in your coverage.' },
+    { text: 'Regular client feedback loops to stay accountable.' },
+    { text: 'Zero-tolerance policy for negligence or misconduct.' },
   ];
+
+  ngAfterViewInit(): void {
+    initScrollAnimations();
+  }
 }

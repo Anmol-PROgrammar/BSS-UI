@@ -2,6 +2,9 @@
    ABOUT – SECURITY STYLE
 ============================ */
 
+/* ----------------------------
+   CONTAINER
+---------------------------- */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -9,9 +12,18 @@
   padding: 0 1rem;
 }
 
+/* ----------------------------
+   ABOUT SECTION WRAPPER
+---------------------------- */
 .about-security {
   padding: 2rem 0;
   color: #0f172a;
+}
+
+@media (min-width: 1200px) {
+  .about-security {
+    padding: 4rem 0;
+  }
 }
 
 /* ----------------------------
@@ -47,6 +59,7 @@
   }
 }
 
+/* Mobile gold underline on h1 */
 .about-intro h1::after {
   content: "";
   position: absolute;
@@ -79,17 +92,23 @@
 }
 
 /* ----------------------------
-   VALUES SECTION
+   VALUES HEADING
+   Replaces dead .values-title class (was never used in HTML).
+   Safe to use animation-timeline here — no hover transform on h1.
 ---------------------------- */
-.values-title {
+.values-heading {
   text-align: center;
   font-size: 1.75rem;
   margin: 0 0 2rem;
   color: #0f172a;
+
+  animation: fadeInUp 0.8s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% 50%;
 }
 
 @media (min-width: 768px) {
-  .values-title {
+  .values-heading {
     font-size: 2rem;
     margin: 3rem 0 2.5rem;
   }
@@ -119,9 +138,34 @@
 }
 
 /* ----------------------------
+   VALUE BOX WRAPPER
+   Plain animation — values grid is near top of page so
+   view() never fires. Stagger via nth-child delays.
+---------------------------- */
+.value-box-wrap {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.value-box-wrap:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.value-box-wrap:nth-child(2) {
+  animation-delay: 0.25s;
+}
+.value-box-wrap:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.value-box-wrap:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+/* ----------------------------
    VALUE BOX
+   Only handles hover — no animation-timeline here.
 ---------------------------- */
 .value-box {
+  height: 100%;
   background: #f8fafc;
   padding: 1.5rem;
   border-left: 4px solid #facc15;
@@ -154,13 +198,21 @@
 /* ============================
    FOUNDER SECTION
 ============================ */
-
 .founder-section {
   padding: 3rem 0;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+@media (min-width: 1200px) {
+  .founder-section {
+    padding: 4rem 0;
+  }
+}
+
+/* ----------------------------
+   SECTION HEADER
+---------------------------- */
 .section-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -206,7 +258,9 @@ hr {
   opacity: 0.7;
 }
 
-/* Top Quote Section */
+/* ----------------------------
+   TOP QUOTE
+---------------------------- */
 .top-quote {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 1.5rem;
@@ -254,7 +308,9 @@ hr {
   }
 }
 
-/* Simple Founder Layout */
+/* ----------------------------
+   FOUNDER LAYOUT
+---------------------------- */
 .simple-founder-layout {
   display: flex;
   flex-direction: column;
@@ -276,7 +332,9 @@ hr {
   }
 }
 
-/* Founder Photo */
+/* ----------------------------
+   FOUNDER PHOTO
+---------------------------- */
 .founder-photo {
   width: 100%;
   max-width: 400px;
@@ -328,7 +386,9 @@ hr {
   }
 }
 
-/* Founder Message */
+/* ----------------------------
+   FOUNDER MESSAGE
+---------------------------- */
 .founder-message {
   width: 100%;
 }
@@ -383,7 +443,6 @@ hr {
   }
 }
 
-/* Quote Box */
 .quote-box {
   background: white;
   border-left: 4px solid #3498db;
@@ -416,65 +475,50 @@ hr {
   }
 }
 
-/* Responsive Design Enhancements */
+/* ----------------------------
+   RESPONSIVE — SMALL SCREENS
+---------------------------- */
 @media (max-width: 480px) {
-  .about-security {
-    padding: 1.5rem 0;
-  }
-
   .about-intro h1 {
     font-size: 1.75rem;
   }
-
   .value-box {
     padding: 1.25rem;
   }
-
   .founder-section {
     padding: 2rem 0;
   }
-
   .section-title {
     font-size: 1.5rem;
   }
-
   .section-subtitle {
     font-size: 0.9rem;
   }
-
   .founder-name {
     font-size: 1.4rem;
   }
-
   .founder-title {
     font-size: 0.9rem;
   }
-
   .quote {
     font-size: 0.95rem;
   }
-
   .photo-frame {
     padding: 8px;
   }
 }
 
-/* Large desktop screens */
-@media (min-width: 1200px) {
-  .about-security {
-    padding: 4rem 0;
-  }
-
-  .founder-section {
-    padding: 4rem 0;
-  }
-}
-
-/* Animation */
+/* ============================
+   ANIMATIONS
+   - value-box-wrap: CSS scroll-driven fadeInUp on the WRAPPER,
+     so hover transform on .value-box is never blocked
+   - founder elements: pure CSS scroll-driven (Chrome/Edge only,
+     instant-show on Firefox/Safari — acceptable fallback)
+============================ */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
@@ -482,16 +526,49 @@ hr {
   }
 }
 
-.value-box,
-.simple-founder-layout > * {
-  animation: fadeInUp 0.6s ease-out;
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .top-quote {
-  animation: fadeInUp 0.4s ease-out;
+  animation: fadeInUp 1s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% 40%;
 }
 
-/* Utility Classes */
+.founder-photo {
+  animation: slideRight 1s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% 40%;
+}
+
+.founder-message {
+  animation: slideLeft 1s ease-out both;
+  animation-timeline: view();
+  animation-range: entry 0% 40%;
+}
+
+/* ============================
+   UTILITY
+============================ */
 .text-center {
   text-align: center;
 }

@@ -356,7 +356,14 @@
 @media (min-width: 768px) {
   .service-card {
     aspect-ratio: auto;
-    height: 350px;
+    height: 600px;
+  }
+}
+
+@media (max-width: 760px) {
+  .service-card {
+    aspect-ratio: auto;
+    height: 550px;
   }
 }
 
@@ -398,6 +405,25 @@
   font-size: 0.9rem;
   opacity: 0.9;
   line-height: 1.4;
+}
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+
+  span {
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+  }
 }
 
 /* Why Choose Us Section */
