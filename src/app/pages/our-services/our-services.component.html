@@ -1,38 +1,61 @@
 <section class="container">
   <!-- Our services -->
-  <section class="our-services mb-5">
+  <section class="our-services">
     <h1 class="section-title">Our Services</h1>
     <p class="section-subtitle">
       “Professional, disciplined, and highly reliable security team.”
     </p>
     <hr />
-
     <div class="service-content">
-      <div class="service-card">
-        <img src="https://picsum.photos/800/600?1" />
-        <div class="service-overlay">
-          <h3>Security Guard</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            earum.
+      <!-- Security Guard card -->
+      <mat-card class="service-card" appearance="outlined">
+        <img
+          mat-card-image
+          src="assets/images/bouncer.jpeg"
+          alt="Security Guard"
+        />
+        <mat-card-header>
+          <mat-card-title class="fw-semibold fs-5 text-center"
+            >Security Guard</mat-card-title
+          >
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-secondary medium pt-4">
+            24/7 protection for residential, commercial, and institutional
+            premises by trained, vetted professionals.
           </p>
-        </div>
-      </div>
+          <mat-chip-set>
+            <mat-chip>24/7 Deployed</mat-chip>
+            <mat-chip>Trained &amp; Vetted</mat-chip>
+            <mat-chip>On-site Supervisor</mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+      </mat-card>
 
-      <div class="service-card">
-        <img src="https://picsum.photos/800/600?2" />
-        <div class="service-overlay">
-          <h3>Bouncers</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-            earum.
+      <!-- Bouncers card -->
+      <mat-card class="service-card" appearance="outlined">
+        <img mat-card-image src="assets/svgs/logo.svg" alt="Bouncers" />
+        <mat-card-header>
+          <mat-card-title class="fw-semibold fs-5">Bouncers</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-secondary medium pt-4">
+            Crowd control &amp; access management for events, venues, and
+            high-profile gatherings.
           </p>
-        </div>
-      </div>
+          <mat-chip-set>
+            <mat-chip>Crowd Control</mat-chip>
+            <mat-chip>Event Security</mat-chip>
+            <mat-chip>Conflict Resolution</mat-chip>
+          </mat-chip-set>
+        </mat-card-content>
+      </mat-card>
     </div>
   </section>
 
-  <h1 class="section-title">Testimonials</h1>
+  <!-- Testimonials-->
+
+  <h1 class="section-title mt-5">Testimonials</h1>
   <p class="section-subtitle">
     Trusted by clients for reliability, professionalism, and peace of mind.
   </p>
